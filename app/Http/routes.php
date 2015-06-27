@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/* Rotas Almoxarifado */
+Route::get('almoxarifado','AlmoxarifadoController@lista');
+/* Fim Almoxarifado*/
