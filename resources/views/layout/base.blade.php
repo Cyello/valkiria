@@ -20,52 +20,42 @@
     <body>
 
         <header>
+            <div class="ui grid">
+                <div class="eight wide column">
+
+                </div>
+                <div class="eight wide column">
+                </div>
+            </div>
         </header>
 
-        <section id="menu-lateral">
-            <div class="ui visible left vertical inverted labeled icon sidebar menu">
-                <a class="item">
-                    <i class="home icon"></i>
-                    Home
-                </a>
-                <a class="item">
-                    <i class="block layout icon"></i>
-                    Topics
-                </a>
-                <a class="item">
-                    <i class="smile icon"></i>
-                    Friends
-                </a>
-                <a class="item">
-                    <i class="calendar icon"></i>
-                    History
-                </a>
-                <a class="item">
-                    <i class="mail icon"></i>
-                    Messages
-                </a>
-                <a class="item">
-                    <i class="chat icon"></i>
-                    Discussions
-                </a>
-                <a class="item">
-                    <i class="trophy icon"></i>
-                    Achievements
-                </a>
-                <a class="item">
-                    <i class="shop icon"></i>
-                    Store
-                </a>
-                <a class="item">
-                    <i class="settings icon"></i>
-                    Settings
-                </a>
-            </div>
-        </section>
-
         <section id="corpo">
-            <div class="">
-                @yield("corpo")
+            <div class="ui grid">
+                <div class="three wide column">
+                    <div class="ui vertical menu">
+                        <div class="item">
+                            <div class="ui transparent icon input">
+                                <input placeholder="pesquisa..." type="text">
+                                <i class="search icon"></i>
+                            </div>
+                        </div>
+                        <a class="active teal item">
+                            Inbox
+                            <div class="ui teal label">1</div>
+                        </a>
+                        <a class="item">
+                            Spam
+                            <div class="ui label">51</div>
+                        </a>
+                        <a class="item">
+                            Updates
+                            <div class="ui label">1</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="thirteen wide column">
+                    @yield("corpo")
+                </div>
             </div>
         </section>
 
