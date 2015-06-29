@@ -1,16 +1,47 @@
 header {
   background-color: #34495e;
   height: 60px;
+  max-width: 100%;
   margin-bottom: 15px;
 }
-#corpo {
-  background-color: #ecf0f1;
+header ul.inline-list {
+  margin-top: 20px;
 }
-#corpo .ui.segment {
-  margin: 0 10px 10px 0;
+header ul.inline-list li {
+  margin-left: 5px;
+  display: inline;
 }
-#corpo .ui.vertical.menu {
-  margin: 0px 10px 0px 10px;
+header ul.inline-list li a {
+  color: white;
+}
+footer {
+  background-color: #34495e;
+  height: 60px;
+}
+footer p {
+  margin-top: 10px;
+  color: white;
+}
+#corpo h2.titulo {
+  margin-top: -10px;
+  float: left;
+}
+#corpo button.adicionar {
+  float: left;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+#corpo #form_pesquisa button {
+  margin-top: 20px;
+}
+#corpo table a {
+  color: black;
+}
+#corpo table a:hover {
+  color: black;
+}
+#corpo ul.nav.nav-pills.nav-stacked li a {
+  color: #2c3e50;
 }
 
 /*# sourceMappingURL=app.css.map */

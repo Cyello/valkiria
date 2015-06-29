@@ -11,5 +11,10 @@ class AlmoxarifadoController extends Controller
       $almoxarifados = Almoxarifado::all();
       return view('almoxarifado.lista', ['almoxarifados' => $almoxarifados]);
     }
+
+    public function cadastrar()
+    {
+        
+    }
 }
 ?>
