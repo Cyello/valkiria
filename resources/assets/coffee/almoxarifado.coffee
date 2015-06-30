@@ -1,8 +1,5 @@
-$("#exibir").click ->
-    $("#modalAlmoxarifado").modal "show"
-
-$("#editar").click ->
-    $("#modalAlmoxarifado").modal "show"
-
-$("#deletar").click ->
-    $("#modalAlmoxarifado").modal "show"
+# Função pra exibição de Almoxarifados em um modal
+modalExibir = ( id ) ->
+    uri = '/almoxarifado/exibir/' + id
+    $.getJSON uri, ( data ) ->
+        alert( data[0]['nome'])

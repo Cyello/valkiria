@@ -17,4 +17,5 @@ Route::get('/', function () {
 
 /* Rotas Almoxarifado */
 Route::get('almoxarifado','AlmoxarifadoController@lista');
+Route::get('almoxarifado/exibir/{id}','AlmoxarifadoController@exibir');
 /* Fim Almoxarifado*/

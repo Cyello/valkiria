@@ -56,9 +56,9 @@
                         <td>{{ $a->responsavel }}</td>
                         <td>{{ $a->identificador }}</td>
                         <td>
-                            <a id="exibir" href=#><i class="fa fa-search fw"></i></a>&nbsp;
-                            <a id="editar" href=#><i class="fa fa-edit fw"></i></a>&nbsp;
-                            <a id="deletar" href=#><i class="fa fa-trash fw"></i></a>&nbsp;
+                            <a id="exibir_{{ $a->identificador }}" href="#" onclick="modalExibir({{$a->id}})"><i class="fa fa-search fw"></i></a>&nbsp;
+                            <a id="editar_{{ $a->identificador }}" href="#"><i class="fa fa-edit fw"></i></a>&nbsp;
+                            <a id="deletar_{{ $a->identificador }}" href="#"><i class="fa fa-trash fw"></i></a>&nbsp;
                         </td>
                     </tr>
                 @endforeach
@@ -85,8 +85,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
       </div>
-      <div class="modal-body">
-        ...
+      <div class="modal-body" id="modal_body">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

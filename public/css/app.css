@@ -1,18 +1,30 @@
-header {
+body {
+  padding-top: 70px;
+}
+body .navbar-default {
   background-color: #34495e;
-  height: 60px;
-  max-width: 100%;
-  margin-bottom: 15px;
+  background-image: none;
 }
-header ul.inline-list {
-  margin-top: 20px;
-}
-header ul.inline-list li {
-  margin-left: 5px;
-  display: inline;
-}
-header ul.inline-list li a {
+body .navbar-default ul.nav.navbar-nav.navbar-right li a {
   color: white;
+}
+header {
+  /*background-color: #34495e;
+    height: 60px;
+    max-width: 100%;
+    margin-bottom: 15px;
+
+    ul.inline-list{
+        margin-top: 20px;
+        li{
+            margin-left: 5px;
+            display: inline;
+            a {
+                color: white;
+            }
+        }
+
+    }*/
 }
 footer {
   background-color: #34495e;

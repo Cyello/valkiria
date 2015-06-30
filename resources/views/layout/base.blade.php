@@ -22,32 +22,31 @@
     </head>
     <body>
         <header>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-4 col-sm-4">
-                        <h3 style="color:#ecf0f1;">Sistema de Almoxarifado</h3>
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#">
+                            <img alt="Brand" src="...">
+                        </a>
                     </div>
-                    <div class="col-md-8 col-sm-8">
-                        <ul class="inline-list text-right">
-                            <li role="presentation" class="active">
-                                <a href="#">
-                                    <i class="fa fa-home fw"></i>
-                                </a>
-                            </li>
-                            <li role="presentation">
-                                <a href="#">
-                                    <i class="fa fa-user fw"></i>
-                                </a>
-                            </li>
-                            <li role="presentation">
-                                <a href="#">
-                                    <i class="fa fa-align-justify fw"></i>
-                                </a>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#">Link</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
                 </div>
-            </div>
+            </nav>
         </header>
 
         <section id="corpo">
@@ -78,6 +77,12 @@
                                         <a>
                                             <i class="fa fa-cubes fa-fw"></i>&nbsp;
                                             Almoxarifados
+                                        </a>
+                                    </li>
+                                    <li role="presentation">
+                                        <a>
+                                            <i class="fa fa-cubes fa-fw"></i>&nbsp;
+                                            Setores
                                         </a>
                                     </li>
                                     <li role="presentation">
