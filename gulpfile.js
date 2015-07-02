@@ -13,5 +13,5 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.less('app.less');
-    mix.coffee(['almoxarifado.coffee'])
+    //mix.coffee(['almoxarifado.coffee'])
 });

@@ -3,6 +3,12 @@
 @section('corpo')
 <div class="row">
     <div class="col-md-12 col-sm-12">
+        @if( old('nome') )
+        <div class="alert alert-success">
+            <strong>Sucesso!</strong>
+            Almoxarifado {{ old('nome') }} foi adicionado.
+        </div>
+        @endif
         <ol class="breadcrumb">
             <li><a href="#">Home</a></li>
             <li><a href="#">Almoxarifados</a></li>
@@ -18,7 +24,7 @@
                     <i class="fa fa-cubes fa-2x"></i>
                     Almoxarifados
                 </h2>
-                <button class="btn btn-secondary adicionar" title="Adicionar Almoxarifado" data-toggle="modal" data-target="#modalAlmoxarifado">
+                <button class="btn btn-secondary adicionar" title="Adicionar Almoxarifado" data-toggle="modal" data-target="#modalAlmoxarifadoCE">
                     <i class="fa fa-plus fa-fw"></i>
                 </button>
             </div>
@@ -77,21 +83,73 @@
     </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="modalAlmoxarifado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<!-- Modal Exibição [auxilio com js]-->
+<div class="modal fade" id="modalAlmoxarifado" tabindex="-1" role="dialog" aria-labelledby="modal_titulo">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="modal_titulo"></h4>
       </div>
       <div class="modal-body" id="modal_body">
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+      <div class="modal-footer" id="modal_footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Modal Cadastro -->
+<div class="modal fade" id="modalAlmoxarifadoCE" tabindex="-1" role="dialog" aria-labelledby="modal_titulo">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="modal_titulo">Cadastro Almoxarifado</h4>
+        </div>
+        <div class="modal-body" id="modal_body">
+            <form id='almoxarifado-form' class='inline-form' method='POST' action='/almoxarifado/cadastrar'>
+               <div class='row'>
+                   <div class='col-md-12 col-sm-12'>
+                       <div class='form-group'>
+                           <label for='nome'>Nome</label>
+                           <input name='nome' class='form-control' />
+                           <input name='_token' value="{{{ csrf_token() }}}" type='hidden'>
+                       </div>
+                   </div>
+               </div>
+               <div class='row'>
+                   <div class='col-md-6 col-sm-6'>
+                       <div class='form-group'>
+                           <label for='identificador'>Responsável</label>
+                           <div class='input-group'>
+                               <input name='responsavel' class='form-control' />
+                               <div class='input-group-addon'><a onclick='geraResponsavel()' href=#><i class='fa fa-plus-square-o'></i></a></div>
+                           </div>
+                       </div>
+                   </div>
+                   <div class='col-md-6 col-sm-6'>
+                       <div class='form-group'>
+                           <label for='identificador'>Identificador</label>
+                           <div class='input-group'>
+                               <input name='identificador' class='form-control' />
+                               <div class='input-group-addon'><a onclick='geraID()' href=#><i class='fa fa-plus-square-o'></i></a></div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+            </form>
+        </div>
+        <div class="modal-footer" id="modal_footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            <button onclick="modalCadastroAlmoxarifado()" type="button" class="btn btn-default btn-primary" data-dismiss="modal">Cadastrar</button>
+        </div>
+        </div>
+    </div>
+</div>
+@stop
+
+@section('javascripts')
+<script src="js/almoxarifado/almoxarifado.js"></script>
 @stop
