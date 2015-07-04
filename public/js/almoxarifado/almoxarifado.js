@@ -1,4 +1,4 @@
-function modalExibir(id) {
+function modalExibirAlmoxarifado(id) {
     var uri;
     uri = '/almoxarifado/exibir/' + id;
     return $.getJSON(uri, function(data) {
@@ -20,6 +20,28 @@ function modalExibir(id) {
     });
 };
 
-function modalCadastroAlmoxarifado(){
-    $("#almoxarifado-form").submit();
+function CadastrarAlmoxarifado(){
+    $("#almoxarifado-cadastro-form").submit();
+}
+
+function EditarAlmoxarifado(){
+    $("#almoxarifado-editar-form").submit();
+}
+
+function modalEditarAlmoxarifado( id ){
+    var uri;
+    uri = "/almoxarifado/editar/"+id;
+
+    return $.getJSON( uri, function( data ){
+
+        $("#almoxarifado-editar-form").attr("method", "POST");
+        $("#almoxarifado-editar-form").attr("action", uri);
+        $("#e-nome").attr("value",data["nome"]);
+        $("#e-responsavel").attr("value",data["responsavel"]);
+        $("#e-identificador").attr("value",data["identificador"]);
+        $("#e-bt-enviar").html("Editar");
+
+        $("#e-modal_titulo").html("Editar Almoxarifado #<i>"+data['identificador']+"</i>");
+        $("#modalEditarAlmoxarifado").modal("show");
+    });
 }

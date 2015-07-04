@@ -24,7 +24,7 @@
                     <i class="fa fa-cubes fa-2x"></i>
                     Almoxarifados
                 </h2>
-                <button class="btn btn-secondary adicionar" title="Adicionar Almoxarifado" data-toggle="modal" data-target="#modalAlmoxarifadoCE">
+                <button class="btn btn-secondary adicionar" title="Adicionar Almoxarifado" data-toggle="modal" data-target="#modalCadastroAlmoxarifado">
                     <i class="fa fa-plus fa-fw"></i>
                 </button>
             </div>
@@ -62,9 +62,9 @@
                         <td>{{ $a->responsavel }}</td>
                         <td>{{ $a->identificador }}</td>
                         <td>
-                            <a id="exibir_{{ $a->identificador }}" href="#" onclick="modalExibir({{$a->id}})"><i class="fa fa-search fw"></i></a>&nbsp;
-                            <a id="editar_{{ $a->identificador }}" href="#"><i class="fa fa-edit fw"></i></a>&nbsp;
-                            <a id="deletar_{{ $a->identificador }}" href="#"><i class="fa fa-trash fw"></i></a>&nbsp;
+                            <a id="exibir_{{ $a->identificador }}" href="#" onclick="modalExibirAlmoxarifado({{ $a->id }})"><i class="fa fa-search fw"></i></a>&nbsp;
+                            <a id="editar_{{ $a->identificador }}" href="#" onclick="modalEditarAlmoxarifado({{ $a->id }})"><i class="fa fa-edit fw"></i></a>&nbsp;
+                            <a id="deletar_{{ $a->identificador }}" href="#"onclick="modalDeletarAlmoxarifado({{ $a->id }})"><i class="fa fa-trash fw"></i></a>&nbsp;
                         </td>
                     </tr>
                 @endforeach
@@ -101,20 +101,20 @@
 </div>
 
 <!-- Modal Cadastro -->
-<div class="modal fade" id="modalAlmoxarifadoCE" tabindex="-1" role="dialog" aria-labelledby="modal_titulo">
+<div class="modal fade" id="modalCadastroAlmoxarifado" tabindex="-1" role="dialog" aria-labelledby="modal_titulo">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="modal_titulo">Cadastro Almoxarifado</h4>
+            <h4 class="modal-title" id="c_modal_titulo">Cadastro Almoxarifado</h4>
         </div>
-        <div class="modal-body" id="modal_body">
-            <form id='almoxarifado-form' class='inline-form' method='POST' action='/almoxarifado/cadastrar'>
+        <div class="modal-body" id="c_modal_body">
+            <form id='almoxarifado-cadastro-form' class='inline-form' method='POST' action='/almoxarifado/cadastrar'>
                <div class='row'>
                    <div class='col-md-12 col-sm-12'>
                        <div class='form-group'>
                            <label for='nome'>Nome</label>
-                           <input name='nome' class='form-control' />
+                           <input id="c_nome" name='nome' class='form-control' />
                            <input name='_token' value="{{{ csrf_token() }}}" type='hidden'>
                        </div>
                    </div>
@@ -124,7 +124,7 @@
                        <div class='form-group'>
                            <label for='identificador'>Responsável</label>
                            <div class='input-group'>
-                               <input name='responsavel' class='form-control' />
+                               <input id="c_responsavel" name='responsavel' class='form-control' />
                                <div class='input-group-addon'><a onclick='geraResponsavel()' href=#><i class='fa fa-plus-square-o'></i></a></div>
                            </div>
                        </div>
@@ -133,7 +133,7 @@
                        <div class='form-group'>
                            <label for='identificador'>Identificador</label>
                            <div class='input-group'>
-                               <input name='identificador' class='form-control' />
+                               <input id="c_identificador" name='identificador' class='form-control' />
                                <div class='input-group-addon'><a onclick='geraID()' href=#><i class='fa fa-plus-square-o'></i></a></div>
                            </div>
                        </div>
@@ -141,9 +141,58 @@
                </div>
             </form>
         </div>
-        <div class="modal-footer" id="modal_footer">
+        <div class="modal-footer" id="c_modal_footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-            <button onclick="modalCadastroAlmoxarifado()" type="button" class="btn btn-default btn-primary" data-dismiss="modal">Cadastrar</button>
+            <button id="c_bt-enviar" onclick="CadastrarAlmoxarifado()" type="button" class="btn btn-default btn-primary" data-dismiss="modal">Cadastrar</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Editar -->
+<div class="modal fade" id="modalEditarAlmoxarifado" tabindex="-1" role="dialog" aria-labelledby="modal_titulo">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="e-modal_titulo"></h4>
+        </div>
+        <div class="modal-body" id="e_modal_body">
+            <form id='almoxarifado-editar-form' class='inline-form' method='PUT' action=''>
+               <div class='row'>
+                   <div class='col-md-12 col-sm-12'>
+                       <div class='form-group'>
+                           <label for='nome'>Nome</label>
+                           <input id="e-nome" name='nome' class='form-control' />
+                           <input name='_token' value="{{{ csrf_token() }}}" type='hidden'>
+                       </div>
+                   </div>
+               </div>
+               <div class='row'>
+                   <div class='col-md-6 col-sm-6'>
+                       <div class='form-group'>
+                           <label for='identificador'>Responsável</label>
+                           <div class='input-group'>
+                               <input id="e-responsavel" name='responsavel' class='form-control' />
+                               <div class='input-group-addon'><a onclick='geraResponsavel()' href=#><i class='fa fa-plus-square-o'></i></a></div>
+                           </div>
+                       </div>
+                   </div>
+                   <div class='col-md-6 col-sm-6'>
+                       <div class='form-group'>
+                           <label for='identificador'>Identificador</label>
+                           <div class='input-group'>
+                               <input id="e-identificador" name='identificador' class='form-control' />
+                               <div class='input-group-addon'><a onclick='geraID()' href=#><i class='fa fa-plus-square-o'></i></a></div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+            </form>
+        </div>
+        <div class="modal-footer" id="e-modal_footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            <button id="e-bt-enviar" onclick="EditarAlmoxarifado()" type="button" class="btn btn-default btn-primary" data-dismiss="modal">Cadastrar</button>
         </div>
         </div>
     </div>

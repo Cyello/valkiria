@@ -28,5 +28,23 @@ class AlmoxarifadoController extends Controller
         return redirect( action('AlmoxarifadoController@lista') )
                 ->withInput( Request::only('nome'));
     }
+
+    public function editar( $id )
+    {
+        $almoxarifado = Almoxarifado::find( $id );
+
+        if( Request::isMethod("get") ){
+            return $almoxarifado;
+        }
+
+        if( Request::isMethod("post") ) {
+            $almoxarifado->nome = Request::input("nome");
+            $almoxarifado->responsavel = Request::input("responsavel");
+            $almoxarifado->identificador = Request::input("identificador");
+            $almoxarifado->save();
+
+            return redirect( action("AlmoxarifadoController@lista"))->withInput( Request::only("nome") );
+        }
+    }
 }
 ?>
