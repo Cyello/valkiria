@@ -46,5 +46,9 @@ class AlmoxarifadoController extends Controller
             return redirect( action("AlmoxarifadoController@lista"))->withInput( Request::only("nome") );
         }
     }
+
+    public function deletar( $id )
+    {
+    }
 }
 ?>

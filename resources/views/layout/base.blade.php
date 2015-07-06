@@ -21,7 +21,7 @@
         <![endif]-->
     </head>
     <body>
-        <header>
+        <header class="navbar-fixed-top">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-5 col-md-5">
