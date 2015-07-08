@@ -19,6 +19,8 @@ Route::get('/', function () {
 Route::get('almoxarifado','AlmoxarifadoController@lista');
 Route::get('almoxarifado/exibir/{id}','AlmoxarifadoController@exibir');
 Route::get('almoxarifado/editar/{id}','AlmoxarifadoController@editar');
+
 Route::post('almoxarifado/editar/{id}','AlmoxarifadoController@editar');
+Route::get('almoxarifado/deletar/{id}','AlmoxarifadoController@deletar');
 Route::post('almoxarifado/cadastrar','AlmoxarifadoController@cadastrar');
 /* Fim Almoxarifado*/

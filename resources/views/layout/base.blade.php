@@ -30,9 +30,9 @@
                     <div class="col-sm-7 col-md-7">
                         <nav id="menu-topo">
                             <ul class="inline-list text-right">
-                                <li><a href=#><i class="fa fa-home fa-fw"></i></a></li>
-                                <li><a href=#><i class="fa fa-user fa-fw"></i></a></li>
-                                <li><a href=#><i class="fa fa-sign-out fa-fw"></i></a></li>
+                                <li><a href=#><i class="fa fa-home fa-fw">&nbsp;</i>início</a></li>
+                                <li><a href=#><i class="fa fa-user fa-fw">&nbsp;</i>usuário</a></li>
+                                <li><a href=#><i class="fa fa-sign-out fa-fw">&nbsp;</i>sair</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -47,55 +47,55 @@
                         <nav id="menu">
                             <ul class="nav nav-pills nav-stacked">
                                 <li role="presentation">
-                                    <a>
+                                    <a id="item-inicio">
                                         <i class="fa fa-home fa-fw"></i>&nbsp;
                                         Inicio
                                     </a>
                                 </li>
                                 <li role="presentation">
-                                    <a>
+                                    <a id="item-requisicoes">
                                         <i class="fa fa-inbox fa-fw"></i>&nbsp;
                                         Requisições<spam class="badge">16</spam>
                                     </a>
                                 </li>
-                                <li role="presentation">
-                                    <a>
+                                <li class="ativo" role="presentation">
+                                    <a id="item-almoxarifados">
                                         <i class="fa fa-cubes fa-fw"></i>&nbsp;
                                         Almoxarifados
                                     </a>
                                 </li>
                                 <li role="presentation">
-                                    <a>
+                                    <a id="item-setores">
                                         <i class="fa fa-bookmark fa-fw"></i>&nbsp;
                                         Setores
                                     </a>
                                 </li>
                                 <li role="presentation">
-                                    <a>
+                                    <a id="item-entrada-de-materiais">
                                         <i class="fa fa-external-link-square fa-fw"></i>&nbsp;
                                         Entrada de Materiais
                                     </a>
                                 </li>
                                 <li role="presentation">
-                                    <a>
+                                    <a id="item-saida-de-materiais">
                                         <i class="fa fa-share-square-o fa-fw"></i>&nbsp;
                                         Saída de Materiais
                                     </a>
                                 </li>
                                 <li role="presentation">
-                                    <a>
+                                    <a id="item-usuarios">
                                         <i class="fa fa-users fa-fw"></i>&nbsp;
                                         Usuários
                                     </a>
                                 </li>
                                 <li role="presentation">
-                                    <a>
+                                    <a id="item-relatorios">
                                         <i class="fa fa-bar-chart fa-fw"></i>&nbsp;
                                         Relatórios
                                     </a>
                                 </li>
                                 <li role="presentation">
-                                    <a>
+                                    <a id="item-configuracoes">
                                         <i class="fa fa-gears fa-fw"></i>&nbsp;
                                         Configurações
                                     </a>
@@ -104,7 +104,7 @@
                         </nav>
                     </div>
 
-                    <div class="col-sm-10 col-md-10">
+                    <div class="col-sm-10 col-md-10" id="conteudo">
                         @yield("corpo")
                     </div>
                 </div>

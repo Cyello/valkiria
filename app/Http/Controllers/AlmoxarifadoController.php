@@ -49,6 +49,20 @@ class AlmoxarifadoController extends Controller
 
     public function deletar( $id )
     {
+        try {
+            $almoxarifado = Almoxarifado::find( $id );
+            if ( $almoxarifado )
+            {
+                $msg = "Almoxarifado ".$almoxarifado->nome." deletado com sucesso";
+                $almoxarifado->delete();
+
+                return redirect( action("AlmoxarifadoController@lista") )->with(["msg_sucesso" => $msg]);
+            }else{
+                throw new \Exception("Valor sem registro no banco de dados");
+            }
+        }catch( \Exception $e){
+            return redirect( action("AlmoxarifadoController@lista") )->with(["msg_erro" => $e->getMessage() ]);
+        }
     }
 }
 ?>

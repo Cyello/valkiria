@@ -56,6 +56,9 @@ footer p {
 footer p a {
   color: #16a085;
 }
+#corpo #conteudo {
+  border-left: solid 1px #ecf0f1;
+}
 #corpo h2.titulo {
   margin-top: -10px;
   float: left;
@@ -75,11 +78,16 @@ footer p a {
   color: black;
 }
 #corpo ul.nav.nav-pills.nav-stacked li a {
-  color: #2c3e50;
+  color: black;
 }
-#menu {
-  position: fixed;
-  border-right: solid 1px #ecf0f1;
+#corpo ul.nav.nav-pills.nav-stacked li a:hover {
+  color: black;
+}
+#corpo ul.nav.nav-pills.nav-stacked li:hover {
+  border-left: solid 5px #16a085;
+}
+#corpo ul.nav.nav-pills.nav-stacked .ativo {
+  border-left: solid 5px #16a085;
 }
 
 /*# sourceMappingURL=app.css.map */

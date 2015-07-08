@@ -4,9 +4,19 @@
 <div class="row">
     <div class="col-md-12 col-sm-12">
         @if( old('nome') )
-        <div class="alert alert-success">
+        <div class="alert alert-success text-center" role="alert">
             <strong>Sucesso!</strong>
             Almoxarifado {{ old('nome') }} foi adicionado.
+        </div>
+        @endif
+        @if( session('msg_sucesso') )
+        <div class="alert alert-success text-center" role="alert">
+            {{ session('msg_sucesso') }}
+        </div>
+        @endif
+        @if( session('msg_erro') )
+        <div class="alert alert-danger text-center" role="alert">
+            {{ session('msg_erro') }}
         </div>
         @endif
         <ol class="breadcrumb">
@@ -64,13 +74,13 @@
                         <td>
                             <a id="exibir_{{ $a->identificador }}" href="#" onclick="modalExibirAlmoxarifado({{ $a->id }})"><i class="fa fa-search fw"></i></a>&nbsp;
                             <a id="editar_{{ $a->identificador }}" href="#" onclick="modalEditarAlmoxarifado({{ $a->id }})"><i class="fa fa-edit fw"></i></a>&nbsp;
-                            <a id="deletar_{{ $a->identificador }}" href="#"onclick="modalDeletarAlmoxarifado({{ $a->id }})"><i class="fa fa-trash fw"></i></a>&nbsp;
+                            <a id="deletar_{{ $a->identificador }}" href="#" onclick="modalDeletarAlmoxarifado({{ $a->id }})"><i class="fa fa-trash fw"></i></a>&nbsp;
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
-        <nav>
+        <nav class="text-right">
             <ul class="pagination">
                 <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
                 <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>

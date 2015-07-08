@@ -45,3 +45,19 @@ function modalEditarAlmoxarifado( id ){
         $("#modalEditarAlmoxarifado").modal("show");
     });
 }
+
+function modalDeletarAlmoxarifado( id ){
+    var uri;
+    uri = "/almoxarifado/exibir/"+id;
+
+    $.getJSON( uri, function( data ){
+        var confirmado = confirm("Apagar Almoxarifado #"+data['identificador']);
+        if( confirmado == true ){
+            var url = "/almoxarifado/deletar/" + id;
+            window.location.assign( url );
+        }
+        else{
+            return 0;
+        }
+    });
+}

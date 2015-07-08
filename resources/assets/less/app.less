@@ -64,6 +64,10 @@ footer {
 }
 #corpo{
     //background-color: #ecf0f1;
+    #conteudo {
+        border-left: solid 1px #ecf0f1;
+    }
+
     h2.titulo {
         margin-top: -10px;
         float:left;
@@ -90,15 +94,26 @@ footer {
     }
 
     ul.nav.nav-pills.nav-stacked{
+        //margin-left: -5px;
         li{
             a{
-                color: #2c3e50;
+                color: black;
             }
+            a:hover{
+                color: black;
+            }
+        }
+        li:hover{
+            border-left: solid 5px #16a085;
+        }
+
+        .ativo {
+                border-left: solid 5px #16a085;
         }
     }
 }
 
 #menu {
-    position: fixed;
-    border-right: solid 1px #ecf0f1;
+    //position: fixed;
+    //border-right: solid 1px #ecf0f1;
 }
