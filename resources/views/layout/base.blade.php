@@ -46,56 +46,56 @@
                     <div class="col-sm-2 col-md-2">
                         <nav id="menu">
                             <ul class="nav nav-pills nav-stacked">
-                                <li role="presentation">
-                                    <a id="item-inicio">
+                                <li id="inicio" role="presentation">
+                                    <a>
                                         <i class="fa fa-home fa-fw"></i>&nbsp;
                                         Inicio
                                     </a>
                                 </li>
-                                <li role="presentation">
-                                    <a id="item-requisicoes">
+                                <li id="requisicao" role="presentation">
+                                    <a>
                                         <i class="fa fa-inbox fa-fw"></i>&nbsp;
                                         Requisições<spam class="badge">16</spam>
                                     </a>
                                 </li>
-                                <li class="ativo" role="presentation">
-                                    <a id="item-almoxarifados">
+                                <li id="almoxarifado" role="presentation">
+                                    <a>
                                         <i class="fa fa-cubes fa-fw"></i>&nbsp;
                                         Almoxarifados
                                     </a>
                                 </li>
-                                <li role="presentation">
-                                    <a id="item-setores">
+                                <li id="setor" role="presentation">
+                                    <a>
                                         <i class="fa fa-bookmark fa-fw"></i>&nbsp;
                                         Setores
                                     </a>
                                 </li>
-                                <li role="presentation">
-                                    <a id="item-entrada-de-materiais">
+                                <li id="entrada-de-materiais" role="presentation">
+                                    <a>
                                         <i class="fa fa-external-link-square fa-fw"></i>&nbsp;
                                         Entrada de Materiais
                                     </a>
                                 </li>
-                                <li role="presentation">
-                                    <a id="item-saida-de-materiais">
+                                <li id="saida-de-materiais" role="presentation">
+                                    <a>
                                         <i class="fa fa-share-square-o fa-fw"></i>&nbsp;
                                         Saída de Materiais
                                     </a>
                                 </li>
-                                <li role="presentation">
-                                    <a id="item-usuarios">
+                                <li id="usuario" role="presentation">
+                                    <a>
                                         <i class="fa fa-users fa-fw"></i>&nbsp;
                                         Usuários
                                     </a>
                                 </li>
-                                <li role="presentation">
-                                    <a id="item-relatorios">
+                                <li id="relatorio" role="presentation">
+                                    <a>
                                         <i class="fa fa-bar-chart fa-fw"></i>&nbsp;
                                         Relatórios
                                     </a>
                                 </li>
-                                <li role="presentation">
-                                    <a id="item-configuracoes">
+                                <li id="configuracoes"role="presentation">
+                                    <a >
                                         <i class="fa fa-gears fa-fw"></i>&nbsp;
                                         Configurações
                                     </a>
@@ -131,6 +131,26 @@
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
         <script src="js/app.js"></script>
+
+        <script>
+            // Apagando valor da classe anterior e setando novo valor baseado na  url
+            var el = document.getElementsByClassName('.ativo');
+
+            if( !el ){
+                el = document.getElementById("inicio");
+
+                el.className = "ativo";
+            }
+            else {
+                el.className = " ";
+
+                var controller = window.location.pathname;
+                controller = controller.split("/")[1]
+                el = document.getElementById( controller.toString() );
+
+                el.className = "ativo";
+            }
+        </script>
         @yield("javascripts")
     </body>
 </html>

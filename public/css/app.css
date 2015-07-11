@@ -87,7 +87,9 @@ footer p a {
   border-left: solid 5px #16a085;
 }
 #corpo ul.nav.nav-pills.nav-stacked .ativo {
+  border-radius: 0 5px 5px 0;
   border-left: solid 5px #16a085;
+  background-color: #f6f6f6;
 }
 
 /*# sourceMappingURL=app.css.map */
