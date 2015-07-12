@@ -24,3 +24,12 @@ Route::post('almoxarifado/editar/{id}','AlmoxarifadoController@editar');
 Route::get('almoxarifado/deletar/{id}','AlmoxarifadoController@deletar');
 Route::post('almoxarifado/cadastrar','AlmoxarifadoController@cadastrar');
 /* Fim Almoxarifado*/
+
+/* Rotas Itens */
+// get
+Route::get("itens", "ItemController@listar");
+Route::get("itens/exibir/{id}", "ItemController@exibir");
+Route::get("itens/editar/{id}", "ItemController@editar");
+
+// post
+/* Fim Rotas Itens*/

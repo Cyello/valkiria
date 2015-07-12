@@ -59,9 +59,15 @@
                                     </a>
                                 </li>
                                 <li id="almoxarifado" role="presentation">
-                                    <a>
+                                    <a href="{{ action('AlmoxarifadoController@lista') }}">
                                         <i class="fa fa-cubes fa-fw"></i>&nbsp;
                                         Almoxarifados
+                                    </a>
+                                </li>
+                                <li id="itens" role="presentation">
+                                    <a href="{{ action('ItemController@listar') }}">
+                                        <i class="fa fa-archive fa-fw"></i>&nbsp;
+                                        Itens
                                     </a>
                                 </li>
                                 <li id="setor" role="presentation">
