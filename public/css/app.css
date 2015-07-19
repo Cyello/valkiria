@@ -1,95 +1,78 @@
-body {
-  padding-top: 50px;
-}
 header {
-  background-color: #16a085;
-  height: 40px;
-  max-width: 100%;
-  margin-bottom: 15px;
-  /*.navbar-default {
-        background-color: #16a085;//#2e8ece;//#34495e;
-        background-image: none;
-
-        ul.nav.navbar-nav.navbar-right {
-            li.dropdown.open{
-                background-color: lighten(#34495e, 10%);
-            }
-            li{
-                ul.dropdown-menu{
-                    li{
-                        a{
-                            color: black;
-                        }
-                    }
-                    li:hover{
-                        background-color: #34495e;
-                    }
-                }
-                a{
-                    color: white;
-                }
-            }
-        }
-    }*/
+  width: 100%;
+  height: 50px;
+  background-color: #3A539B;
+  box-shadow: 2px 2px 2px #2C3E50;
 }
-header ul.inline-list {
-  margin-top: 10px;
+header ul.nav.nav-pills {
+  margin-left: 69%;
+  margin-top: 5px;
 }
-header ul.inline-list li {
-  margin-left: 5px;
-  display: inline;
+header ul.nav.nav-pills li a,
+header ul.nav.nav-pills li i {
+  color: #ECECEC;
 }
-header ul.inline-list li a {
-  color: white;
-}
-header .titulo {
-  color: white;
+header ul.nav.nav-pills li:hover a,
+header ul.nav.nav-pills li:hover i {
+  color: #3a539b;
 }
 footer {
   height: 60px;
-  border-top: solid 1px #ecf0f1;
 }
-footer p {
+.box {
+  background-color: white;
+  border-radius: 3px;
   margin-top: 10px;
-  color: black;
 }
-footer p a {
-  color: #16a085;
-}
-#corpo #conteudo {
-  border-left: solid 1px #ecf0f1;
-}
-#corpo h2.titulo {
-  margin-top: -10px;
-  float: left;
-}
-#corpo button.adicionar {
-  float: left;
+.box table {
+  max-width: 98%;
   margin-left: 10px;
-  margin-top: 15px;
 }
-#corpo #form_pesquisa button {
-  margin-top: 20px;
+.box nav {
+  margin-left: 10px;
 }
-#corpo table a {
-  color: black;
+.box .page-header {
+  margin-top: -5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 10px;
 }
-#corpo table a:hover {
-  color: black;
+.box-shadow {
+  box-shadow: 2px 2px 2px 2px #ccc;
 }
-#corpo ul.nav.nav-pills.nav-stacked li a {
-  color: black;
+.wrap-border-radius {
+  border-radius: 3px;
 }
-#corpo ul.nav.nav-pills.nav-stacked li a:hover {
-  color: black;
+#corpo {
+  padding-top: 60px;
+  background-color: #EEEEEE;
+  min-height: 620px;
 }
-#corpo ul.nav.nav-pills.nav-stacked li:hover {
-  border-left: solid 5px #16a085;
+#menu-lateral {
+  margin-top: -10px;
+  margin-left: -20px;
+  background-color: #2C3E50;
+  position: fixed;
+  min-height: 720px;
+  width: 220px;
 }
-#corpo ul.nav.nav-pills.nav-stacked .ativo {
-  border-radius: 0 5px 5px 0;
-  border-left: solid 5px #16a085;
-  background-color: #f6f6f6;
+#menu-lateral ul.nav.nav-pills.nav-stacked {
+  padding-left: 10px;
+  margin-top: 5px;
+}
+#menu-lateral ul.nav.nav-pills.nav-stacked li {
+  border-bottom: solid 1px #34495E;
+}
+#menu-lateral ul.nav.nav-pills.nav-stacked li:hover {
+  background-color: white;
+}
+#menu-lateral ul.nav.nav-pills.nav-stacked li:hover a,
+#menu-lateral ul.nav.nav-pills.nav-stacked li:hover i {
+  color: #2C3E50;
+}
+#menu-lateral ul.nav.nav-pills.nav-stacked a,
+#menu-lateral ul.nav.nav-pills.nav-stacked i {
+  color: #ECECEC;
 }
 
 /*# sourceMappingURL=app.css.map */

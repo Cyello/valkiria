@@ -8,10 +8,10 @@
         <title>Sistema de Almoxarifado</title>
 
         <!-- Bootstrap -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-        <link href="css/font-awesome.min.css" rel="stylesheet">
-        <link href="css/app.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap.min.css"></link>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css"></link>
+        <link rel="stylesheet" href="css/app.css"></link>
+        <link rel="stylesheet" href="css/font-awesome.min.css">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -21,142 +21,92 @@
         <![endif]-->
     </head>
     <body>
-        <header class="navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-5 col-md-5">
-                        <h4 class="titulo">Sistema de Almoxarifado - Valkiria v0.1</h4>
-                    </div>
-                    <div class="col-sm-7 col-md-7">
-                        <nav id="menu-topo">
-                            <ul class="inline-list text-right">
-                                <li><a href=#><i class="fa fa-home fa-fw">&nbsp;</i>início</a></li>
-                                <li><a href=#><i class="fa fa-user fa-fw">&nbsp;</i>usuário</a></li>
-                                <li><a href=#><i class="fa fa-sign-out fa-fw">&nbsp;</i>sair</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <section id="corpo">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-2 col-md-2">
-                        <nav id="menu">
-                            <ul class="nav nav-pills nav-stacked">
-                                <li id="inicio" role="presentation">
+            <header class="navbar-fixed-top">
+                <div class="container-fluid">
+                    <div class="row">
+                        <section class="col-md-6 col-sm-6">
+                        </section>
+                        <section class="col-md-6 col-sm-6 text-right">
+                            <ul class="nav nav-pills text-right">
+                                <li>
                                     <a>
-                                        <i class="fa fa-home fa-fw"></i>&nbsp;
-                                        Inicio
+                                        <i class="fa fa-home fa-fw"></i>
                                     </a>
                                 </li>
-                                <li id="requisicao" role="presentation">
-                                    <a>
-                                        <i class="fa fa-inbox fa-fw"></i>&nbsp;
-                                        Requisições<spam class="badge">16</spam>
+                                <li>
+                                    <a><i class="fa fa-envelope-o fa-fw"></i>
                                     </a>
                                 </li>
-                                <li id="almoxarifado" role="presentation">
-                                    <a href="{{ action('AlmoxarifadoController@lista') }}">
-                                        <i class="fa fa-cubes fa-fw"></i>&nbsp;
-                                        Almoxarifados
+                                <li>
+                                    <a><i class="fa fa-user-plus fa-fw"></i>
                                     </a>
                                 </li>
-                                <li id="itens" role="presentation">
-                                    <a href="{{ action('ItemController@listar') }}">
-                                        <i class="fa fa-archive fa-fw"></i>&nbsp;
-                                        Itens
-                                    </a>
-                                </li>
-                                <li id="setor" role="presentation">
-                                    <a>
-                                        <i class="fa fa-bookmark fa-fw"></i>&nbsp;
-                                        Setores
-                                    </a>
-                                </li>
-                                <li id="entrada-de-materiais" role="presentation">
-                                    <a>
-                                        <i class="fa fa-external-link-square fa-fw"></i>&nbsp;
-                                        Entrada de Materiais
-                                    </a>
-                                </li>
-                                <li id="saida-de-materiais" role="presentation">
-                                    <a>
-                                        <i class="fa fa-share-square-o fa-fw"></i>&nbsp;
-                                        Saída de Materiais
-                                    </a>
-                                </li>
-                                <li id="usuario" role="presentation">
-                                    <a>
-                                        <i class="fa fa-users fa-fw"></i>&nbsp;
-                                        Usuários
-                                    </a>
-                                </li>
-                                <li id="relatorio" role="presentation">
-                                    <a>
-                                        <i class="fa fa-bar-chart fa-fw"></i>&nbsp;
-                                        Relatórios
-                                    </a>
-                                </li>
-                                <li id="configuracoes"role="presentation">
-                                    <a >
-                                        <i class="fa fa-gears fa-fw"></i>&nbsp;
-                                        Configurações
+                                <li>
+                                    <a><i class="fa fa-sign-out fa-fw"></i>
                                     </a>
                                 </li>
                             </ul>
-                        </nav>
-                    </div>
-
-                    <div class="col-sm-10 col-md-10" id="conteudo">
-                        @yield("corpo")
+                        </section>
                     </div>
                 </div>
-            </div>
-        </section>
+            </header>
 
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-12">
-                        <p class="text-center">
-                            <spam><?php echo date('Y') ?>&nbsp;&copy;Todos os direitos a <a href=#>Prefeitura Municipal de Forquilha</a></spam>
-                            <br />
-                            <spam>Desenvolvido por <a href=#>Rodrigo Soares</a></spam>
-                        </p>
+            <section id="corpo">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2">
+                            <aside id="menu-lateral" class="wrap-box-shadow">
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li role="presentation">
+                                        <a><i class="fa fa-home fa-fw"></i>&nbsp;
+                                            Início
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a><i class="fa fa-inbox fa-fw"></i>&nbsp;
+                                            Requisições&nbsp;<span class="badge">42</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a><i class="fa fa-cubes fa-fw"></i>&nbsp;
+                                            Almoxarifados
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a><i class="fa fa-mail-reply fa-fw"></i>&nbsp;
+                                            Entrada de Materiais
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a><i class="fa fa-external-link fa-fw"></i>&nbsp;
+                                            Saída de Materiais
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a><i class="fa fa-area-chart fa-fw"></i>&nbsp;
+                                            Relatórios
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a><i class="fa fa-gear fa-fw"></i>&nbsp;
+                                            Configurações
+                                        </a>
+                                    </li>
+                                </ul>
+                            </aside>
+                        </div>
+                        <div class="col-md-10 col-sm-10">
+                            @yield("corpo")
+
+                            <footer>
+                            </footer>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </section>
 
-
-        <!-- jQuery (necessary for Bootstraps JavaScript plugins) -->
         <script src="js/jquery-2.1.4.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
-        <script src="js/app.js"></script>
-
-        <script>
-            // Apagando valor da classe anterior e setando novo valor baseado na  url
-            var el = document.getElementsByClassName('.ativo');
-
-            if( !el ){
-                el = document.getElementById("inicio");
-
-                el.className = "ativo";
-            }
-            else {
-                el.className = " ";
-
-                var controller = window.location.pathname;
-                controller = controller.split("/")[1]
-                el = document.getElementById( controller.toString() );
-
-                el.className = "ativo";
-            }
-        </script>
         @yield("javascripts")
     </body>
 </html>
