@@ -1,8 +1,8 @@
 header {
   width: 100%;
   height: 50px;
-  background-color: #3A539B;
-  box-shadow: 2px 2px 2px #2C3E50;
+  background-color: #2C3E50;
+  border-bottom: solid 1px #34495E;
 }
 header ul.nav.nav-pills {
   margin-left: 69%;
@@ -15,6 +15,19 @@ header ul.nav.nav-pills li i {
 header ul.nav.nav-pills li:hover a,
 header ul.nav.nav-pills li:hover i {
   color: #3a539b;
+}
+header .logo {
+  padding-top: 10px;
+  float: left;
+  color: #ececec;
+  margin-right: 10px;
+}
+header .titulo {
+  float: left;
+  padding-top: 5px;
+}
+header .titulo h4 {
+  color: #ECECEC;
 }
 footer {
   height: 60px;
@@ -57,10 +70,10 @@ footer {
   width: 220px;
 }
 #menu-lateral ul.nav.nav-pills.nav-stacked {
-  padding-left: 10px;
   margin-top: 5px;
 }
 #menu-lateral ul.nav.nav-pills.nav-stacked li {
+  padding-left: 10px;
   border-bottom: solid 1px #34495E;
 }
 #menu-lateral ul.nav.nav-pills.nav-stacked li:hover {

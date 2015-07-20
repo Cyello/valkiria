@@ -18,9 +18,15 @@
 </div>
 @endif
 
+<ol class="breadcrumb">
+    <li><a href="#">Início</a></li>
+    <li><a href="#">Almoxarifados</a></li>
+    <li class="active">Lista</li>
+</ol>
+
 <div class="box box-shadow">
     <div class="page-header">
-        <h1>Almoxarifados <small>lista&nbsp;<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Novo</button></small></h1>
+        <h1>Almoxarifados <small>lista&nbsp;<button class="btn btn-primary" data-toggle="modal" data-target="#modalCadastroAlmoxarifado">Novo</button></small></h1>
     </div>
     <table class="table table-hover">
         <thead>
@@ -69,24 +75,8 @@
 </div>
 
 <!-- Modais  -->
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+@include("almoxarifado._form-cadastro")
+@include("almoxarifado._form-editar")
 <!-- Fim Modais -->
 
 @stop

@@ -25,6 +25,12 @@
                 <div class="container-fluid">
                     <div class="row">
                         <section class="col-md-6 col-sm-6">
+                            <div class="logo">
+                                <i class="fa fa-dot-circle-o fa-2x"></i>&nbsp;
+                            </div>
+                            <div class="titulo">
+                                <h4>Valkiria - Sistema de Almoxarifado</h4>
+                            </div>
                         </section>
                         <section class="col-md-6 col-sm-6 text-right">
                             <ul class="nav nav-pills text-right">
