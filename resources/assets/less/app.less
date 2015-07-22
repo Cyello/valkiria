@@ -3,7 +3,7 @@ header {
     width: 100%;
     height: 50px;
     background-color: #2C3E50;//#3A539B;
-    border-bottom: solid 1px #34495E;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);//#34495E;
     //box-shadow: 2px 2px 2px #2C3E50;
 
     ul.nav.nav-pills {
@@ -42,9 +42,13 @@ footer {
     border-radius: 3px;
     margin-top: 10px;
 
+    hr{
+        margin-bottom: 0px;
+    }
+
     table {
-        max-width: 98%;
-        margin-left: 10px;
+        max-width: 96%;
+        margin-left: 20px;
     }
 
     nav {
@@ -53,8 +57,8 @@ footer {
 
     .page-header{
         margin-top: -5px;
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
 
         padding-top: 10px;
     }
@@ -70,12 +74,12 @@ footer {
 #corpo {
     padding-top: 60px;
     background-color: #EEEEEE;
-    min-height: 620px;
+    min-height: 670px;
 }
 
 #menu-lateral {
     margin-top: -10px;
-    margin-left: -20px;
+    margin-left: -24px;
     background-color: #2C3E50;
     position: fixed;
     min-height: 720px;
@@ -84,8 +88,7 @@ footer {
     ul.nav.nav-pills.nav-stacked {
         margin-top: 5px;
         li{
-            padding-left: 10px;
-            border-bottom: solid 1px #34495E;
+            border-bottom: solid 1px rgba(0, 0, 0, 0.1);
         }
         li:hover {
             background-color: white;
@@ -95,6 +98,7 @@ footer {
         }
         a,i{
             color: #ECECEC;
+            margin-left: 10px;
         }
     }
 }

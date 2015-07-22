@@ -3,7 +3,7 @@
 @section('corpo')
 
 @if( session('msg_sucesso') )
-<div class="alert alert-sucesso" role="alert">
+<div class="alert alert-success" role="alert">
     <center>
         <spam>{{ session('msg_sucesso') }}<spam>
     <center>
@@ -24,10 +24,11 @@
     <li class="active">Lista</li>
 </ol>
 
-<div class="box box-shadow">
+<div class="box">
     <div class="page-header">
         <h1>Almoxarifados <small>lista&nbsp;<button class="btn btn-primary" data-toggle="modal" data-target="#modalCadastroAlmoxarifado">Novo</button></small></h1>
     </div>
+    @if( count($almoxarifados) > 0 )
     <table class="table table-hover">
         <thead>
             <tr>
@@ -52,6 +53,13 @@
             @endforeach
         </tbody>
     </table>
+    @else
+    <p class="bg-warning text-center" style="margin-left:20px;margin-right: 20px;">
+        Sem registros no banco de dados
+    </p>
+    @endif
+
+    <hr/>
 
     <nav class="text-center">
       <ul class="pagination">
@@ -82,5 +90,5 @@
 @stop
 
 @section('javascripts')
-<script src="js/almoxarifado/almoxarifado.js"></script>
+<script src="js/controllers/almoxarifado.js"></script>
 @stop

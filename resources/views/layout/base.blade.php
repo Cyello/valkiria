@@ -34,21 +34,26 @@
                         </section>
                         <section class="col-md-6 col-sm-6 text-right">
                             <ul class="nav nav-pills text-right">
-                                <li>
+                                <li data-toggle="tooltip" data-placement="bottom"
+                                title="Início">
                                     <a>
                                         <i class="fa fa-home fa-fw"></i>
                                     </a>
                                 </li>
-                                <li>
+                                <li data-toggle="tooltip" data-placement="bottom"
+                                title="Mensagens Internas">
                                     <a><i class="fa fa-envelope-o fa-fw"></i>
                                     </a>
                                 </li>
-                                <li>
+                                <li data-toggle="tooltip" data-placement="bottom"
+                                title="Perfil do Usuário">
                                     <a><i class="fa fa-user-plus fa-fw"></i>
                                     </a>
                                 </li>
-                                <li>
-                                    <a><i class="fa fa-sign-out fa-fw"></i>
+                                <li data-toggle="tooltip" data-placement="bottom"
+                                title="Sair do Sistema">
+                                    <a>
+                                        <i class="fa fa-sign-out fa-fw"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -114,5 +119,10 @@
         <script src="js/jquery-2.1.4.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         @yield("javascripts")
+        <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+        </script>
     </body>
 </html>

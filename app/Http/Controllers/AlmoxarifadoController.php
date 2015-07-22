@@ -24,9 +24,11 @@ class AlmoxarifadoController extends Controller
 
     public function cadastrar()
     {
+        // TODO: Criar regras de validação
         Almoxarifado::create( Request::all() );
+
         return redirect( action('AlmoxarifadoController@lista') )
-                ->withInput( Request::only('nome'));
+                ->with(['msg_sucesso' => 'Almoxarifado #'.Request::input('nome').' Cadastrado com sucesso']);
     }
 
     public function editar( $id )
