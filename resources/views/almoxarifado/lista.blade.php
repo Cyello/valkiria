@@ -17,19 +17,56 @@
     <center>
 </div>
 @endif
+<div class="ls-box ls-sm-space ls-box-gray">
+    <ol class="ls-breadcrumb">
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Almoxarifado</a></li>
+        <li>Lista</li>
+    </ol>
+</div>
 
-<ol class="breadcrumb">
-    <li><a href="#">Início</a></li>
-    <li><a href="#">Almoxarifados</a></li>
-    <li class="active">Lista</li>
-</ol>
-
-<div class="box">
-    <div class="page-header">
-        <h1>Almoxarifados <small>lista&nbsp;<button class="btn btn-primary" data-toggle="modal" data-target="#modalCadastroAlmoxarifado">Novo</button></small></h1>
+<div class="ls-box-filter">
+  <form action="" class="ls-form ls-form-inline">
+    <label class="ls-label col-md-10 col-sm-10">
+      <b class="ls-label-text">Filtro( Nome, Identificador, Responsável)</b>
+      <input type="text" name="filtro">
+    </label>
+    <div class="ls-actions-btn">
+      <button type="button" class="ls-btn">Filtrar</button>
     </div>
+  </form>
+</div>
+
+<div class="ls-box">
+    <h1 class="ls-title-3">Almoxarifados no Sistema</h1>
+    <hr />
+    <div class="ls-pagination-filter">
+        <ul class="ls-pagination">
+            <li><a href="#">&laquo; Anterior</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">Próximo &raquo;</a></li>
+        </ul>
+
+        <div class="ls-filter-view">
+            Exibir
+            <div class="ls-custom-select">
+                <select name="" id="" class="ls-select">
+                    <option value="10">10</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+            </div>
+            ítens por página
+        </div>
+    </div>
+
     @if( count($almoxarifados) > 0 )
-    <table class="table table-hover">
+    <table class="ls-table">
         <thead>
             <tr>
                 <th>Nome</th>
@@ -58,37 +95,7 @@
         Sem registros no banco de dados
     </p>
     @endif
-
-    <hr/>
-
-    <nav class="text-center">
-      <ul class="pagination">
-        <li>
-          <a href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
-        </li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>
-          <a href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
-      </ul>
-  </nav>
 </div>
 
-<!-- Modais  -->
-@include("almoxarifado._form-cadastro")
-@include("almoxarifado._form-editar")
-<!-- Fim Modais -->
 
-@stop
-
-@section('javascripts')
-<script src="js/controllers/almoxarifado.js"></script>
 @stop
