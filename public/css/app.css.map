@@ -1,1 +1,1 @@
-{"version":3,"sources":["app.less","app.css"],"names":[],"mappings":"AAAA;EAEQ,kBAAA;EACA,oBAAA;EACA,oBAAA;ECAP","file":"app.css","sourcesContent":[".corpo {\n    .ls-box{\n        margin-top: 80px;\n        margin-left:280px;\n        margin-right: 10px;\n    }\n}\n",null],"sourceRoot":"/source/"}
+{"version":3,"sources":["app.less","app.css"],"names":[],"mappings":"AAAA;EAEQ,iBAAA;ECAP","file":"app.css","sourcesContent":[".ls-title-3 {\n    .ls-btn-primary{\n        margin-top: 0px;\n    }\n}\n",null],"sourceRoot":"/source/"}

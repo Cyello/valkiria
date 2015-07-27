@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="description" content="Insira aqui a descrição da página.">
     <link href="http://assets.locaweb.com.br/locastyle/3.7.4/stylesheets/locastyle.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="css/app.css" rel="stylesheet" type="text/css">
     <link rel="icon" sizes="192x192" href="/locawebstyle/assets/images/ico-boilerplate.png">
     <link rel="apple-touch-icon" href="/locawebstyle/assets/images/ico-boilerplate.png">
   </head>
@@ -26,8 +28,8 @@
         <!-- User details -->
         <div data-ls-module="dropdown" class="ls-dropdown ls-user-account">
           <a href="#" class="ls-ico-user">
-            Zoe Palmer
-            <small>(lstyle)</small>
+            Rodrigo S. Soares
+            <small>(rsouza)</small>
           </a>
           <nav class="ls-dropdown-nav ls-user-menu">
             <ul>
@@ -42,7 +44,10 @@
 
       <!-- Nome do produto/marca -->
       <h1 class="ls-brand-name">
-          <a class="ls-ico-earth" href="/locawebstyle/documentacao/exemplos/boilerplate">Valkíria - Sistema de Almoxarifado</a>
+          <a class="ls-ico-earth" href="{{ action('AlmoxarifadoController@lista') }}">
+              <small>Valkiria v0.1</small>
+              Sistema de Almoxarifado
+          </a>
       </h1>
     </div>
 
@@ -70,7 +75,16 @@
         <ul>
           <li><a href="#" class="ls-ico-home">Página inicial</a></li>
           <li><a href="#" class="ls-ico-docs">Requisições</a></li>
-          <li><a href="#" class="ls-ico-origins">Almoxarifados</a></li>
+          <li class="ls-submenu">
+              <a href="#" class="ls-ico-origins">Almoxarifados</a>
+              <ul role="menu">
+                  <li><a class="ls-submenu-item" href="#">Entrada de Materiais</a></li>
+                  <li><a class="ls-submenu-item" href="#">Saída de Materiais</a></li>
+                  <li><a class="ls-submenu-item" href="#">Ítens</a></li>
+                  <li><a class="ls-submenu-item" href="#">Setores</a></li>
+                  <li><a class="ls-submenu-item" href="#">Categorias</a></li>
+              </ul>
+          </li>
           <li><a href="#" class="ls-ico-stats">Relatórios</a></li>
           <li><a href="#" class="ls-ico-cog">Configurações</a></li>
         </ul>
@@ -127,5 +141,6 @@
     <!-- We recommended use jQuery 1.10 or up -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="http://assets.locaweb.com.br/locastyle/3.7.4/javascripts/locastyle.js" type="text/javascript"></script>
+    @yield("javascripts")
   </body>
 </html>

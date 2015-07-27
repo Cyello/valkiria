@@ -2,28 +2,14 @@
 
 @section('corpo')
 
-@if( session('msg_sucesso') )
-<div class="alert alert-success" role="alert">
-    <center>
-        <spam>{{ session('msg_sucesso') }}<spam>
-    <center>
-</div>
-@endif
+@include("shared.mensagens_de_sessao")
 
-@if( session('msg_erro') )
-<div class="alert alert-danger" role="alert">
-    <center>
-        <spam>{{ session('msg_erro') }}<spam>
-    <center>
-</div>
-@endif
-<div class="ls-box ls-sm-space ls-box-gray">
-    <ol class="ls-breadcrumb">
-        <li><a href="#">Início</a></li>
-        <li><a href="#">Almoxarifado</a></li>
-        <li>Lista</li>
-    </ol>
-</div>
+
+<ol class="ls-breadcrumb">
+    <li><a href="#">Início</a></li>
+    <li><a href="#">Almoxarifado</a></li>
+    <li>Lista</li>
+</ol>
 
 <div class="ls-box-filter">
   <form action="" class="ls-form ls-form-inline">
@@ -38,8 +24,12 @@
 </div>
 
 <div class="ls-box">
-    <h1 class="ls-title-3">Almoxarifados no Sistema</h1>
+    <h1 class="ls-title-3">Almoxarifados no Sistema
+        <button class="ls-btn-primary" data-ls-module="modal" data-target="#myAwesomeModal">Novo</button>
+    </h1>
     <hr />
+
+    @if( count($almoxarifados) > 0 )
     <div class="ls-pagination-filter">
         <ul class="ls-pagination">
             <li><a href="#">&laquo; Anterior</a></li>
@@ -65,14 +55,13 @@
         </div>
     </div>
 
-    @if( count($almoxarifados) > 0 )
     <table class="ls-table">
         <thead>
             <tr>
                 <th>Nome</th>
                 <th>Responsável</th>
                 <th>Identificador</th>
-                <th></th>
+                <th>Ações</th>
             </tr>
         </thred>
         <tbody>
@@ -82,20 +71,28 @@
                     <td>{{ $a->responsavel }}</td>
                     <td>{{ $a->identificador }}</td>
                     <td>
-                        <a id="exibir_{{ $a->identificador }}" href="#" onclick="modalExibirAlmoxarifado({{ $a->id }})"><i class="fa fa-search fw"></i></a>&nbsp;
-                        <a id="editar_{{ $a->identificador }}" href="#" onclick="modalEditarAlmoxarifado({{ $a->id }})"><i class="fa fa-edit fw"></i></a>&nbsp;
-                        <a id="deletar_{{ $a->identificador }}" href="#" onclick="modalDeletarAlmoxarifado({{ $a->id }})"><i class="fa fa-trash fw"></i></a>&nbsp;
+                        <a id="exibir_{{ $a->identificador }}" href="#"><i class="fa fa-search fw"></i></a>&nbsp;
+                        <a id="editar_{{ $a->identificador }}" href="#"><i class="fa fa-edit fw"></i></a>&nbsp;
+                        <a id="deletar_{{ $a->identificador }}" href="#"><i class="fa fa-trash fw"></i></a>&nbsp;
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
     @else
-    <p class="bg-warning text-center" style="margin-left:20px;margin-right: 20px;">
+    <p class="ls-background-warning ls-txt-center" style="margin-left:20px;margin-right:20px;height:40px;padding-top:13px;">
         Sem registros no banco de dados
     </p>
     @endif
 </div>
+@stop
 
+<!-- Modais -->
+@include("almoxarifado._form-cadastro")
+@include("almoxarifado._form-editar")
+@include("almoxarifado._modal-exibir")
+<!-- -->
 
+@section("javascripts")
+<script src="js/controllers/almoxarifado.js"></script>
 @stop
